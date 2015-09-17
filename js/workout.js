@@ -6,7 +6,7 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
       this.image = args.image; //reference that marvel tutorial about this pattern
       this.related = {};
   }
-  
+
   function WorkoutPlan(args) {
       this.exercises = [];
       this.name = args.name;
@@ -20,5 +20,21 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
       startWorkout();
     }
     startProgram(); //use traditional because want to control when start
+
+
+    var startWorkout = function(){
+      workoutPlan = createWorkout();
+      restPeriod = {
+        details: new Exercise({
+          name: 'rest',
+          title:'Rest!!',
+          description: "Deep Breathes! ",
+          img: ""
+        }),
+        duration: workoutPlan.restBetweenExercise;
+      }
+      startExercise(workoutPlan.exercises.shift());
+    };
+
 
 }]);
