@@ -85,5 +85,4 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
 
 
 
-
 }]);//end  workoutController
