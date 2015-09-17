@@ -43,8 +43,40 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
         title:"Tabata Workout",
         restBetweenExercise: 10
       });
-      
-      workout.exercises
+
+      //hard-code seed exercise data first then create persisted back
+      workout.exercises.push({
+        details: new Exercises({
+          name: "airSquat",
+          title:"Air Squats",
+          description:"Standing Air Squats",
+          imge:"",
+          variations:[]
+        }),
+        duration: 20
+      });
+
+      workout.exercises.push({
+        details: new Exercises({
+          name: "burpee",
+          title:"Burpees",
+          description:"In Place Burpees",
+          imge:"",
+          variations:[]
+        }),
+        duration: 20
+      });
+
+      workout.exercises.push({
+        details: new Exercises({
+          name: "pushUp",
+          title:"Push Ups",
+          description:"Chest to Deck Push Ups",
+          imge:"",
+          variations:[]
+        }),
+        duration: 20
+      });
 
 
     };//end createWorkout
@@ -54,4 +86,4 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
 
 
 
-}]);
+}]);//end  workoutController
