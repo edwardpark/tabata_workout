@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html ng-app="tabataApp">
+<html ng-app="app">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js"></script>
     <meta charset="utf-8">
+
     <title>Tabata Workout</title>
   </head>
   <body>
-    <div ng-controller ="workoutController">
+    <div ng-controller ="workoutCtrl">
       <p>Current Exercise: {{currentExercise | json}}</p>
       <p>Time Left: {{currentExercise.duration-currentExerciseDuration}}</p>
     </div>
+
+
+    {{5+5}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/workout.js"></script>
   </body>
 </html>

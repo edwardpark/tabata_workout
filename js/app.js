@@ -1,3 +1,4 @@
-(function(){
-  var app = angular.module("tabataApp",["WorkoutController"]);
-})()
+
+  angular.module('app', ['tabataWorkout']);
+
+  angular.module('tabataWorkout', []);
