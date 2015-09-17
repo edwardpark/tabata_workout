@@ -1,4 +1,4 @@
-angular.module('tabataApp').controller('WorkoutController',['$scope', function($scope){
+angular.module('tabataApp').controller('WorkoutController',['$scope','$interval', function($scope,$interval){
   var restPeriod;
   var workoutPlan;
   var startProgram = functon(){
@@ -81,6 +81,16 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
 
     };//end createWorkout
 
+   var startExercise = function(exercisePlan){
+     $scope.currentExercise = exercisePlan;
+     $scope.currentExerciseDuration = 0;
+     $interval(function(){
+          ++$scope.currentExerciseDuration;
+       }
+       , 1000 , $scope.currentExercise.duration
+     ); //service wrapper over the window.setInerval method found on SOverflow
+
+   };//end startExercise
 
 
 
