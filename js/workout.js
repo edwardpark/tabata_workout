@@ -1,4 +1,12 @@
 angular.module('tabataApp').controller('WorkoutController',['$scope', function($scope){
+  var restPeriod;
+  var workoutPlan;
+  var startProgram = functon(){
+    startWorkout();
+  }
+  startProgram(); //use traditional because want to control when start
+
+
   function Exercise(args) {
       this.name = args.name;
       this.title = args.title;
@@ -14,14 +22,7 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
       this.restBetweenExercise = args.restBetweenExercise;
   };
 
-    var restPeriod;
-    var workoutPlan;
-    var startProgram = functon(){
-      startWorkout();
-    }
-    startProgram(); //use traditional because want to control when start
-
-
+/////////////////////////////////////////////////////////////////
     var startWorkout = function(){
       workoutPlan = createWorkout();
       restPeriod = {
@@ -34,7 +35,23 @@ angular.module('tabataApp').controller('WorkoutController',['$scope', function($
         duration: workoutPlan.restBetweenExercise;
       }
       startExercise(workoutPlan.exercises.shift());
-    };
+    };//end startWorkout
+
+    var createWorkout = function(){
+      var workout = new WorkoutPlan({
+        name: "Tabata Workout !",
+        title:"Tabata Workout",
+        restBetweenExercise: 10
+      });
+      
+      workout.exercises
+
+
+    };//end createWorkout
+
+
+
+
 
 
 }]);
