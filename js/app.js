@@ -1,8 +1,3 @@
 (function(){
-  var app = angular.module("tabataApp",[
-
-
-
-    
-  ]);
+  var app = angular.module("tabataApp",["WorkoutController"]);
 })()
