@@ -1,9 +1,9 @@
 angular.module('tabataWorkout')
   .controller('workoutCtrl', ['$scope', '$interval','$location', function ($scope, $interval,$location){
     var restPeriod;
-    var workoutPlan;
 
-    function WorkoutPlan(args) {
+
+    function workoutPlan(args) {
         this.exercises = [];
         this.name = args.name;
         this.title = args.title;
@@ -33,9 +33,9 @@ angular.module('tabataWorkout')
 
   /////////////////////////////////////////////////////////////////
       var startWorkout = function(){
-        workoutPlan = createWorkout();
+        $scope.workoutPlan = createWorkout();
 
-        $scope.workoutTimeRemaining = workoutPlan.totalWorkoutTime();
+        $scope.workoutTimeRemaining = $scope.workoutPlan.totalWorkoutTime();
 
         restPeriod = {
             details: new Exercise({
@@ -44,7 +44,7 @@ angular.module('tabataWorkout')
               description: "Deep Breathes! ",
               image: ""
             }),
-            duration: workoutPlan.restBetweenExercise
+            duration: $scope.workoutPlan.restBetweenExercise
         };
 
         $interval(function () {
@@ -52,7 +52,7 @@ angular.module('tabataWorkout')
             }, 1000, $scope.workoutTimeRemaining
         );
 
-        startExercise(workoutPlan.exercises.shift());
+        startExercise($scope.workoutPlan.exercises.shift());
       };//end startWorkout
 
 
@@ -77,9 +77,9 @@ angular.module('tabataWorkout')
        var getNextExercise = function (currentExercisePlan) {
          var nextExercise = null;
          if (currentExercisePlan === restPeriod) {
-            nextExercise = workoutPlan.exercises.shift();
+            nextExercise = $scope.workoutPlan.exercises.shift();
          } else {
-         if (workoutPlan.exercises.length != 0) {
+         if ($scope.workoutPlan.exercises.length != 0) {
             nextExercise = restPeriod;
          }
        }
@@ -89,7 +89,7 @@ angular.module('tabataWorkout')
 
 
       var createWorkout = function(){
-        var workout = new WorkoutPlan({
+        var workout = new workoutPlan({
           name: "Tabata Workout",
           title:"Tabata Workout",
           restBetweenExercise: 10
