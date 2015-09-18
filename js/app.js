@@ -6,7 +6,10 @@
         });
         $routeProvider.when('/workout', {
             templateUrl: 'views/workout.html',
-            controller: 'WorkoutController'
+            controller: 'workoutCtrl'
+        });
+        $routeProvider.otherwise({
+          redirectTo: '/start'
         });
 
     });
