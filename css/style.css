@@ -77,8 +77,8 @@ input[type="checkbox"].input-validation-error {
 }
 .workout-display-div .img-responsive{
     margin: 25px auto;
-    width:540px;
-    height:360px;
+    width:20;
+    height:20%;
     cursor:pointer;
 }
 .workout-display-div .time-progress{
@@ -112,8 +112,4 @@ input[type="checkbox"].input-validation-error {
     padding-top:15px;
 }
 
-#video-panel .panel-body{
-    max-height:650px;
-    overflow:auto;
-}
 /*Styles for workout page - end*/

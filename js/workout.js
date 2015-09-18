@@ -83,10 +83,10 @@ angular.module('tabataWorkout')
       //  hard-code seed exercise data first then create persisted back
         workout.exercises.push({
           details: new Exercise({
-            name: "airSquat",
-            title:"Air Squats",
-            description:"Standing Air Squats",
-            image:""
+            name: "jogInPlace",
+            title:"Jog in Place!",
+            description:"Chest up and Job in Place",
+            image:"img/Crono.gif"
           }),
           duration: 20
         });
