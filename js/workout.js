@@ -3,7 +3,7 @@
 
 
 angular.module('tabataWorkout')
-  .controller('workoutCtrl', ['$scope', '$interval', function ($scope, $interval){
+  .controller('workoutCtrl', ['$scope', '$interval','$location', function ($scope, $interval,$location){
     var restPeriod;
     var workoutPlan;
 
@@ -54,7 +54,7 @@ angular.module('tabataWorkout')
              if (next) {
                  startExercise(next);
              } else {
-                 console.log("Workout complete!")
+                $location.path('/finish');
              }
          });//end of .then promise
        };//end startExercise
