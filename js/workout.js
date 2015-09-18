@@ -42,7 +42,7 @@ angular.module('tabataWorkout')
               name: 'rest',
               title:'Rest!!',
               description: "Deep Breathes! ",
-              image: ""
+              image: "img/rest.gif"
             }),
             duration: $scope.workoutPlan.restBetweenExercise
         };
@@ -109,9 +109,9 @@ angular.module('tabataWorkout')
         workout.exercises.push({
           details: new Exercise({
             name: "burpee",
-            title:"Burpees",
+            title:"Burpees!",
             description:"In Place Burpees",
-            image:""
+            image:"img/burpees.gif"
 
           }),
           duration: 20
@@ -119,10 +119,20 @@ angular.module('tabataWorkout')
 
         workout.exercises.push({
           details: new Exercise({
-            name: "pushUp",
-            title:"Push Ups",
-            description:"Chest to Deck Push Ups",
-            image:""
+            name: "crunches",
+            title:"Sit ups! ",
+            description:"sit ups!",
+            image:"img/crunches.gif"
+
+          }),
+          duration: 20
+        });
+        workout.exercises.push({
+          details: new Exercise({
+            name: "jumpingJacks",
+            title:"Jumping Jacks! ",
+            description:"jumping Jacks!",
+            image:"img/jumpingjacks.gif"
 
           }),
           duration: 20

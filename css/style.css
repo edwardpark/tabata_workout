@@ -9,7 +9,7 @@ body {
     padding-bottom: 20px;
     min-height: 100%;
     font-size: 13px;
-    font-family: 'Roboto Slab';
+    font-family:'Lobster','Roboto Slab';
     font-style: normal;
     font-weight: 400;
 }
@@ -110,4 +110,12 @@ input[type="checkbox"].input-validation-error {
 /*Styles for workout page - start*/
 .workout-app-container{
     padding-top:15px;
+}
+.mainContainer{
+  background:#39C8D6;
+}
+
+.workoutTitle{
+  
+  border-bottom: 1px solid black;
 }
