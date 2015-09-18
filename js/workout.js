@@ -48,21 +48,30 @@ angular.module('tabataWorkout')
               ++$scope.currentExerciseDuration;
            }
            , 1000 , $scope.currentExercise.duration
-         ); //service wrapper over the window.setInerval method found on SOverflow
-
+         ) //service wrapper over the window.setInerval method found on SOverflow
+         .then(function () {
+             var next = getNextExercise(exercisePlan);
+             if (next) {
+                 startExercise(next);
+             } else {
+                 console.log("Workout complete!")
+             }
+         });//end of .then promise
        };//end startExercise
 
        var getNextExercise = function (currentExercisePlan) {
          var nextExercise = null;
-         if (currentExercisePlan === restExercise) {
+         if (currentExercisePlan === restPeriod) {
             nextExercise = workoutPlan.exercises.shift();
          } else {
          if (workoutPlan.exercises.length != 0) {
-            nextExercise = restExercise;
+            nextExercise = restPeriod;
          }
        }
      return nextExercise;
       };
+
+
 
       var createWorkout = function(){
         var workout = new WorkoutPlan({
