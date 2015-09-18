@@ -12,6 +12,17 @@ angular.module('tabataWorkout')
         this.name = args.name;
         this.title = args.title;
         this.restBetweenExercise = args.restBetweenExercise;
+
+        this.totalWorkoutTime = function(){
+          if (this.exercises.length == 0)
+            return 0;
+            var total = 0;
+            angular.forEach(this.exercises, function(exercise){
+              total = total + exercise.duration;
+            });
+          return this.restBetweenExercise * (this.exercises.length -1) + total;
+        };
+
     }
 
     function Exercise(args) {
