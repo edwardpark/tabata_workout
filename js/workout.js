@@ -1,7 +1,3 @@
-
-
-
-
 angular.module('tabataWorkout')
   .controller('workoutCtrl', ['$scope', '$interval','$location', function ($scope, $interval,$location){
     var restPeriod;
@@ -39,6 +35,8 @@ angular.module('tabataWorkout')
       var startWorkout = function(){
         workoutPlan = createWorkout();
 
+        $scope.workoutTimeRemaining = workoutPlan.totalWorkoutTime();
+
         restPeriod = {
             details: new Exercise({
               name: 'rest',
@@ -48,6 +46,12 @@ angular.module('tabataWorkout')
             }),
             duration: workoutPlan.restBetweenExercise
         };
+
+        $interval(function () {
+            $scope.workoutTimeRemaining = $scope.workoutTimeRemaining - 1;
+            }, 1000, $scope.workoutTimeRemaining
+        );
+
         startExercise(workoutPlan.exercises.shift());
       };//end startWorkout
 
